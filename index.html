@@ -1,106 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi" class="h-full">
 <head>
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Master the Market – Beginner's Guide</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
-
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TRADE WITH SUDHARSHAN - Official Telegram Channel</title>
+  
+  <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#00a3ff',
+              600: '#0284c7',
+              700: '#0369a1',
+            }
+          },
+          animation: {
+            'spin-slow': 'spin 8s linear infinite',
+            'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+            'float-slow': 'float 6s ease-in-out infinite',
+            'shimmer': 'shimmer 2.4s infinite linear',
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%, 100%': { 
+                boxShadow: '0 10px 25px -3px rgba(0, 163, 255, 0.45), 0 4px 12px rgba(0, 163, 255, 0.25)',
+                transform: 'scale(1)'
+              },
+              '50%': { 
+                boxShadow: '0 20px 35px -2px rgba(0, 163, 255, 0.65), 0 8px 18px rgba(0, 163, 255, 0.4)',
+                transform: 'scale(1.015)'
+              },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(200%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Master the Market – Beginner's Guide">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop">
-
-  <!-- Minimal CSS (inline for speed) -->
   <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #00f0ff;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
+    /* Dot Matrix Background Pattern */
+    .bg-dot-pattern {
+      background-color: #f8fafc;
+      background-image: radial-gradient(rgba(148, 163, 184, 0.35) 1.25px, transparent 1.25px);
+      background-size: 22px 22px;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
+
+    /* Rotating Gradient Glow Ring */
+    .glow-avatar-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
+    
+    .glow-avatar-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #00d2ff, #0066ff, #a855f7, #ec4899, #00f2fe);
+      background-size: 300% 300%;
+      animation: rotateGradient 6s linear infinite;
+      z-index: 1;
+      filter: blur(4px);
+      opacity: 0.85;
     }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
+
+    .glow-avatar-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, #00d2ff, #0066ff, #a855f7, #ec4899, #00f2fe);
+      background-size: 300% 300%;
+      animation: rotateGradient 6s linear infinite;
+      z-index: 2;
     }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
+
+    @keyframes rotateGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
+
+    /* Primary Telegram Button Glow Effect */
+    .btn-tg-glow {
+      background: linear-gradient(135deg, #00b4d8 0%, #0096c7 40%, #0077b6 100%);
+      box-shadow: 0 10px 30px -4px rgba(0, 150, 199, 0.48), 0 4px 12px rgba(0, 119, 182, 0.3);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
+    .btn-tg-glow:hover {
+      box-shadow: 0 16px 36px -4px rgba(0, 150, 199, 0.65), 0 6px 18px rgba(0, 119, 182, 0.45);
+      transform: translateY(-2px);
+    }
+    .btn-tg-glow:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 6px 16px -2px rgba(0, 150, 199, 0.4);
+    }
+
+    /* Soft Card Subtle Glow on hover */
+    .feature-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08), 0 0 18px -4px rgba(56, 189, 248, 0.18);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    /* Floating Ambient Gradient Blobs */
+    .ambient-glow-top {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 480px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(168, 85, 247, 0.12) 45%, transparent 70%);
+      filter: blur(55px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Smooth Tap / Ripple Effect */
+    .tap-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .tap-effect::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 10.01%);
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: scale(10, 10);
+      opacity: 0;
+      transition: transform .5s, opacity .8s;
+    }
+    .tap-effect:active::after {
+      transform: scale(0, 0);
+      opacity: .3;
+      transition: 0s;
+    }
   </style>
 </head>
-<body>
-  <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Master the Market – Beginner's Guide</h1>
-    <p class="sub">Education only – no investment advice</p>
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+<body class="bg-dot-pattern text-slate-800 font-sans min-h-screen relative flex flex-col justify-between selection:bg-cyan-200 selection:text-cyan-900 overflow-x-hidden">
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
-    </ul>
+  <!-- Ambient Glowing Blobs -->
+  <div class="ambient-glow-top"></div>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp89.html" rel="nofollow">Start Learning</a>
+  <!-- Main Container (Mobile Frame Constraint for High-Conversion Aesthetic) -->
+  <main class="relative z-10 w-full max-w-md mx-auto px-5 pt-8 pb-10 flex flex-col items-center">
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+    <!-- Top Badge / Live Status -->
+    <div class="inline-flex items-center gap-2 px-3 py-1 mb-5 rounded-full bg-white/90 border border-slate-200/80 shadow-sm backdrop-blur-md">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+      </span>
+      <span class="text-[12px] font-semibold text-slate-600 tracking-wide">Live Trading Channel</span>
+    </div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+    <!-- Centered Animated Avatar -->
+    <div class="glow-avatar-wrapper mb-4 group cursor-pointer" onclick="handleJoinClick()">
+      <div class="relative z-10 w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden p-[3px] bg-white shadow-md">
+        <!-- Sudharshan's Profile Image -->
+        <img 
+          id="profileImage"
+          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" 
+          alt="Trade With Sudharshan" 
+          class="w-full h-full object-cover rounded-full transform transition duration-500 group-hover:scale-105"
+          onerror="this.src='https://placehold.co/240x240/0284c7/ffffff?text=SUDHARSHAN'"
+        />
+        <!-- Verified Tick Icon Over Avatar -->
+        <div class="absolute bottom-1 right-1 bg-sky-500 text-white w-6 h-6 rounded-full flex items-center justify-center border-2 border-white shadow-md text-[11px]">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </div>
+    </div>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
+    <!-- Title & Brand Information -->
+    <h1 id="channelTitle" class="font-display font-extrabold text-2xl sm:text-[26px] text-slate-900 tracking-tight text-center leading-tight mb-1">
+      TRADE WITH SUDHARSHAN
+    </h1>
+
+    <div class="flex items-center justify-center gap-1.5 text-slate-600 font-medium text-sm mb-1">
+      <span class="text-slate-500">(original)</span>
+      <span class="text-sky-500 font-semibold flex items-center">
+        <i class="fa-solid fa-paper-plane text-xs rotate-[-12deg]"></i>
+      </span>
+    </div>
+
+    <!-- Subscriber Count with animated counter -->
+    <div class="text-slate-500 text-sm font-semibold tracking-wide mb-6">
+      <span id="subscriberCountDisplay">50 000</span> subscribers
+    </div>
+
+    <!-- Primary CTA: JOIN CHANNEL BUTTON -->
+    <div class="w-full mb-2">
+      <button 
+        type="button" 
+        onclick="handleJoinClick()" 
+        class="w-full btn-tg-glow animate-pulse-glow tap-effect relative overflow-hidden text-white font-display font-bold text-lg tracking-wider py-4 px-6 rounded-2xl flex items-center justify-center gap-3 transition-transform duration-200">
+        
+        <!-- Shimmer light highlight -->
+        <span class="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 animate-shimmer pointer-events-none"></span>
+
+        <!-- Telegram Icon SVG -->
+        <svg class="w-6 h-6 fill-current text-white transform -rotate-12 transition-transform group-hover:rotate-0" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+        </svg>
+
+        <span>JOIN CHANNEL</span>
+        
+        <i class="fa-solid fa-paper-plane text-sm ml-1 opacity-90"></i>
+      </button>
+    </div>
+
+    <!-- Instruction Subtext -->
+    <p class="text-xs text-center text-slate-500 font-medium px-4 mb-7 leading-relaxed">
+      Tap <span class="text-sky-600 font-semibold">JOIN CHANNEL</span>, then tap <span class="font-semibold text-slate-700">“Request to Join”</span> in Telegram
+    </p>
+
+    <!-- Value Proposition Feature Cards -->
+    <div class="w-full space-y-3.5 mb-8">
+      
+      <!-- Card 1: Market Insights -->
+      <div onclick="handleJoinClick()" class="feature-card cursor-pointer bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-2xl p-4 flex items-center gap-4 shadow-sm hover:shadow-md">
+        <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 border border-sky-100/80 text-xl">
+          <i class="fa-solid fa-chart-simple"></i>
+        </div>
+        <div class="text-left flex-1 min-w-0">
+          <h2 class="font-bold text-slate-900 text-base leading-tight">Market Insights & Analysis</h2>
+          <p class="text-xs text-slate-500 font-medium mt-0.5 truncate">Real-time market updates and expert discussions</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Learn Trading Strategies -->
+      <div onclick="handleJoinClick()" class="feature-card cursor-pointer bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-2xl p-4 flex items-center gap-4 shadow-sm hover:shadow-md">
+        <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 border border-sky-100/80 text-xl">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <div class="text-left flex-1 min-w-0">
+          <h2 class="font-bold text-slate-900 text-base leading-tight">Learn Trading Strategies</h2>
+          <p class="text-xs text-slate-500 font-medium mt-0.5 truncate">Investment | Share Market | Trading guidance</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Practical Tips & Tricks -->
+      <div onclick="handleJoinClick()" class="feature-card cursor-pointer bg-white/95 backdrop-blur-sm border border-slate-200/90 rounded-2xl p-4 flex items-center gap-4 shadow-sm hover:shadow-md">
+        <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 border border-sky-100/80 text-xl">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="text-left flex-1 min-w-0">
+          <h2 class="font-bold text-slate-900 text-base leading-tight">Practical Tips & Tricks</h2>
+          <p class="text-xs text-slate-500 font-medium mt-0.5 truncate">Actionable strategies and proven methods</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="w-full flex items-center justify-center gap-3 my-2">
+      <div class="h-[1px] bg-slate-200 flex-1"></div>
+      <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Help & Support</span>
+      <div class="h-[1px] bg-slate-200 flex-1"></div>
+    </div>
+
+    <!-- Fallback / In-App Browser Escape Section -->
+    <div class="w-full mt-4 flex flex-col items-center text-center">
+      <h3 class="font-bold text-slate-900 text-base mb-3">Telegram nahi khula?</h3>
+      
+      <!-- Secondary App Opener Button -->
+      <button 
+        type="button" 
+        onclick="handleSecondaryClick()" 
+        class="w-full py-3.5 px-5 bg-white/90 hover:bg-slate-50 active:bg-slate-100 text-slate-800 font-semibold text-sm rounded-2xl border border-slate-300/80 shadow-sm transition-all flex items-center justify-center gap-2.5">
+        <i class="fa-solid fa-paper-plane text-sky-500 text-sm"></i>
+        <span>Telegram app me kholo</span>
+      </button>
+
+      <!-- Troubleshooting hint for in-app Instagram/Facebook browsers -->
+      <div class="mt-3.5 px-3 py-2 rounded-xl bg-slate-100/70 border border-slate-200/60 text-[12px] text-slate-500 font-medium leading-relaxed max-w-sm">
+        Ya upar <span class="font-bold text-slate-700">⋮</span> menu &rarr; <span class="text-slate-800 font-semibold">'Open in browser / Chrome me kholo'</span> dabao, phir direct khul jayega.
+      </div>
+    </div>
+
   </main>
 
+  <!-- Meta Ads Policy Compliance & Legal Footer -->
+  <footer class="w-full border-t border-slate-200/80 bg-white/60 backdrop-blur-sm py-6 px-4 text-center mt-auto">
+    <div class="max-w-md mx-auto space-y-3">
+      <!-- Legal Links -->
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-slate-500 font-medium">
+        <button type="button" onclick="openLegalModal('disclaimer')" class="hover:text-sky-600 underline underline-offset-2">Disclaimer</button>
+        <span>•</span>
+        <button type="button" onclick="openLegalModal('privacy')" class="hover:text-sky-600 underline underline-offset-2">Privacy Policy</button>
+        <span>•</span>
+        <button type="button" onclick="openLegalModal('terms')" class="hover:text-sky-600 underline underline-offset-2">Terms & Conditions</button>
+        <span>•</span>
+        <button type="button" onclick="openLegalModal('contact')" class="hover:text-sky-600 underline underline-offset-2">Contact Us</button>
+      </div>
+
+      <!-- Financial Disclaimer for Meta/Google Ads compliance -->
+      <p class="text-[11px] text-slate-400 leading-normal max-w-sm mx-auto">
+        Disclaimer: All content provided is for educational and informational purposes only. We do not provide SEBI registered investment advice. Stock and derivative trading involves substantial risk of loss.
+      </p>
+
+      <p class="text-[10px] text-slate-400">
+        © <span id="currentYear">2026</span> Trade With Sudharshan. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Legal Modal Dialog (Ad Compliant - No page reload/leave) -->
+  <div id="legalModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
+    <div class="bg-white w-full max-w-lg rounded-t-3xl sm:rounded-2xl max-h-[85vh] flex flex-col shadow-2xl border border-slate-100 overflow-hidden transform transition-transform">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/70">
+        <h3 id="modalTitle" class="font-display font-bold text-lg text-slate-800">Legal Information</h3>
+        <button type="button" onclick="closeLegalModal()" class="w-8 h-8 rounded-full bg-slate-200/70 text-slate-600 hover:bg-slate-300 flex items-center justify-center">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      
+      <!-- Modal Content Body -->
+      <div id="modalBody" class="p-5 text-sm text-slate-600 overflow-y-auto space-y-3 leading-relaxed">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+        <button type="button" onclick="closeLegalModal()" class="px-5 py-2 bg-sky-500 hover:bg-sky-600 text-white font-medium text-sm rounded-xl">
+          Theek hai / Got it
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toastNotification" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-slate-900/90 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg border border-slate-700/50 opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center gap-2">
+    <i class="fa-solid fa-circle-check text-sky-400"></i>
+    <span id="toastMsg">Redirecting to Telegram...</span>
+  </div>
+
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    /* ==========================================================================
+       CONFIGURATION: Replace these values with your actual channel information
+       ========================================================================== */
+    const CONFIG = {
+      // Your Telegram channel or invite link
+      telegramLink: "https://t.me/+0Dg1fAdRSBY0YjU9", 
+      
+      // Fallback deep scheme link for mobile devices
+      telegramAppScheme: "tg://join?invite=0Dg1fAdRSBY0YjU9", 
+      
+      // Channel Display Name
+      channelName: "TRADE WITH SUDHARSHAN",
+      
+      // Subscriber count shown in UI
+      subscriberCount: 50000,
+      
+      // Custom Logo / Profile Image URL (Change this to any image link you want)
+      avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      
+      // Contact Email
+      contactEmail: "support@tradewithsudharshan.com"
+    };
+
+    /* Initialize dynamic UI data */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById('currentYear').innerText = new Date().getFullYear();
+      
+      // Set Avatar if custom specified
+      const imgElem = document.getElementById('profileImage');
+      if (CONFIG.avatarUrl) {
+        imgElem.src = CONFIG.avatarUrl;
+      }
+
+      // Format subscriber count with space separator (e.g. 50 000)
+      const formattedSubs = CONFIG.subscriberCount.toLocaleString('en-US').replace(/,/g, ' ');
+      document.getElementById('subscriberCountDisplay').innerText = formattedSubs;
+    });
+
+    /* Primary CTA Click Handler */
+    function handleJoinClick() {
+      showToast("Telegram me redirect ho raha hai...");
+
+      // Attempt deep link first for mobile apps, with immediate web fallback
+      const start = Date.now();
+      window.location.href = CONFIG.telegramLink;
+
+      // In case user is inside restricted in-app browser like Instagram / FB
+      setTimeout(() => {
+        if (Date.now() - start < 1500) {
+          window.open(CONFIG.telegramLink, '_blank');
+        }
+      }, 500);
+    }
+
+    /* Secondary 'Telegram App Me Kholo' Click */
+    function handleSecondaryClick() {
+      showToast("Telegram app khol rahe hain...");
+      // Try opening directly via tg:// scheme then fallback to standard web link
+      window.location.href = CONFIG.telegramAppScheme;
+      setTimeout(() => {
+        window.open(CONFIG.telegramLink, '_blank');
+      }, 700);
+    }
+
+    /* Show floating mini toast message */
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const msg = document.getElementById('toastMsg');
+      msg.innerText = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2500);
+    }
+
+    /* Legal Modals Content & Controller */
+    const LEGAL_CONTENT = {
+      disclaimer: {
+        title: "Disclaimer & Risk Disclosure",
+        content: `
+          <p class="font-semibold text-slate-800">Educational Purposes Only:</p>
+          <p>The information, charts, analyses, and discussions shared on Trade With Sudharshan are solely meant for informational and educational purposes. We do not provide financial advice, tips, or portfolio management services.</p>
+          <p class="font-semibold text-slate-800 mt-2">Market Risk Warning:</p>
+          <p>Trading in Stocks, Futures, Options, and Commodities entails significant risk of capital loss. Past performance is no guarantee of future returns. Please consult an independent SEBI-registered financial advisor before undertaking any actual trades.</p>
+        `
+      },
+      privacy: {
+        title: "Privacy Policy",
+        content: `
+          <p>We respect your privacy. This landing page does not directly collect, harvest, or sell any personal identifying information (PII) from visitors.</p>
+          <p class="mt-2">Standard anonymous analytics cookies or advertising pixels (e.g. Meta Pixel) may be used strictly to optimize advertising delivery and verify traffic authenticity according to international web standards.</p>
+        `
+      },
+      terms: {
+        title: "Terms and Conditions",
+        content: `
+          <p>By clicking "JOIN CHANNEL", you acknowledge that you are voluntarily joining an external Telegram community.</p>
+          <p class="mt-2">Trade With Sudharshan is not liable for any financial decisions, direct or indirect losses incurred based upon interpretations of market discussion in third-party messaging channels.</p>
+        `
+      },
+      contact: {
+        title: "Contact Information",
+        content: `
+          <p>For questions, support, or brand partnerships, please reach out via official communication channels:</p>
+          <div class="mt-3 p-3 bg-slate-100 rounded-xl space-y-1">
+            <p><strong class="text-slate-800">Email:</strong> ${CONFIG.contactEmail}</p>
+            <p><strong class="text-slate-800">Platform:</strong> Telegram Community</p>
+            <p><strong class="text-slate-800">Response time:</strong> Within 24-48 hours</p>
+          </div>
+        `
+      }
+    };
+
+    function openLegalModal(type) {
+      const data = LEGAL_CONTENT[type];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalBody').innerHTML = data.content;
+      
+      const modal = document.getElementById('legalModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLegalModal() {
+      const modal = document.getElementById('legalModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close on backdrop tap
+    document.getElementById('legalModal').addEventListener('click', (e) => {
+      if (e.target.id === 'legalModal') {
+        closeLegalModal();
+      }
+    });
   </script>
 </body>
 </html>
